@@ -12,7 +12,7 @@
 
 MSP msp;
 char custommsg[30];
-int lap, lap_time = 0;
+int cnt, cnt_time = 0;
 void setup() {
   pinMode(RXD1, INPUT);
   Serial1.begin(SERIAL_SPEED, SERIAL_8N1, RXD1 , TXD1);
@@ -20,11 +20,10 @@ void setup() {
 }
 
 void loop() {
-  //strcpy(custommsg, "LAPTIMER");
-  sprintf(custommsg, "Lap:%d %d", lap, lap_time);
+  sprintf(custommsg, "Demo:%d %d", cnt, cnt_time);
 
   msp.command2(MSP2_COMMON_SET_CUSTOM_MSG, &custommsg, sizeof(custommsg), 0);
-  lap = lap + 1;
-  lap_time = lap_time + 10;
+  cnt = cnt + 1;
+  cnt_time = cnt_time + 100;
   delay(1000);
 }
