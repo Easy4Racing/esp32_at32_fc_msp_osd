@@ -82,6 +82,8 @@
 #define MSP2_COMMON_SET_RADAR_ITD       0x100C //SET radar information to display
 #define MSP2_COMMON_SET_CUSTOM_MSG      0x100D //SET custom information to display
 
+#define MSP2_SET_CUSTOM_OSD_INFO        0x3008  // for set self defined OSD message text
+
 // bits of getActiveModes() return value
 #define MSP_MODE_ARM          0
 #define MSP_MODE_ANGLE        1

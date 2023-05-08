@@ -22,7 +22,7 @@ void setup() {
 void loop() {
   sprintf(custommsg, "Demo:%d %d", cnt, cnt_time);
 
-  msp.command2(MSP2_COMMON_SET_CUSTOM_MSG, &custommsg, sizeof(custommsg), 0);
+  msp.command2(MSP2_SET_CUSTOM_OSD_INFO, &custommsg, sizeof(custommsg), 0);
   cnt = cnt + 1;
   cnt_time = cnt_time + 100;
   delay(1000);
