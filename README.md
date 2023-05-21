@@ -5,8 +5,10 @@
 
 ## 功能
 调用MSP库，用来向AT32飞控发送MSP命令，以实现自定义显示OSD内容
+
 ## 说明
-1. 需要等AT32的固件更新，新固件即将支持新的MSP命令，该命令可显示自定义OSD信息。<br>
-2. 待AT32固件新增该功能后，修改改库文件MSP.h中MSP2_COMMON_SET_CUSTOM_MSG的ID，该ID由AT32的固件确定
+1. 需要更新AT固件，新固件即将支持新的MSP命令，该命令可显示自定义OSD信息。<br>
+2. 可以调用BF的OSD图标进行格式化字符串，例：sprintf(custommsg, " %c%d%c%d", SYM_TOTAL_DISTANCE, cnt, SYM_SPEED, cnt_time)，但存在待解决的BUG, 即待显示的字符串前必须有个空格，否则首字母会被遗漏
+
 ## 开发环境
 Arduino IDE
