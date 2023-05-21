@@ -5,6 +5,7 @@
       改库文件MSP.h中MSP2_COMMON_SET_CUSTOM_MSG的ID
 */
 #include "src/lib_msp/MSP.h"
+#include "src/osd_symbols.h"
 
 #define RXD1 27
 #define TXD1 12
@@ -20,10 +21,10 @@ void setup() {
 }
 
 void loop() {
-  sprintf(custommsg, "Demo:%d %d", cnt, cnt_time);
+  sprintf(custommsg, " %c%d%c%d", SYM_TOTAL_DISTANCE, cnt, SYM_SPEED, cnt_time); //待解决的BUG, 前缀必须有个空格，否则首字母漏掉
 
   msp.command2(MSP2_SET_CUSTOM_OSD_INFO, &custommsg, sizeof(custommsg), 0);
   cnt = cnt + 1;
-  cnt_time = cnt_time + 100;
+  cnt_time = cnt_time + 5;
   delay(1000);
 }
